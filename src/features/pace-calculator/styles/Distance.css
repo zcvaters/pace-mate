@@ -1,0 +1,22 @@
+.distance-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.distance-controllers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.distance-tag {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    text-align: start;
+    margin-left: 0.5rem;
+    margin-bottom: 0.25rem;
+}
