@@ -22,7 +22,6 @@ export default function TimeDuration(props) {
 
   return (
       <div className="time-input-container">
-        <div className="time-tag">Time</div>
         <div className="time-controllers">
           <span className="p-float-label">
           <InputNumber
@@ -39,9 +38,9 @@ export default function TimeDuration(props) {
             min={0}
             max={12}
           />
-          <label htmlFor="inputnumber">Hour</label>
+          <label htmlFor="inputnumber">Hours</label>
           </span>
-          :
+          <div className="time-colon no-select">:</div>
           <span className="p-float-label">
           <InputNumber
             onValueChange={(e) => setMinute(e.value)}
@@ -57,9 +56,9 @@ export default function TimeDuration(props) {
             min={0}
             max={59}
           />
-          <label htmlFor="inputnumber">Minute</label>
+          <label htmlFor="inputnumber">Minutes</label>
           </span>
-          :
+          <div className="time-colon no-select">:</div>
           <span className="p-float-label">
           <InputNumber
             onValueChange={(e) => setSecond(e.value)}
@@ -75,7 +74,7 @@ export default function TimeDuration(props) {
             min={0}
             max={59}
           />
-          <label htmlFor="inputnumber">Second</label>
+          <label htmlFor="inputnumber">Seconds</label>
           </span>
         </div>
       </div>

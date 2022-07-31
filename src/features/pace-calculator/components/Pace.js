@@ -4,8 +4,8 @@ import "../styles/Pace.css";
 
 
 export default function Pace(props) {
-    const [minute, setMinute] = useState(0);
-    const [second, setSecond] = useState(0);
+    const [minute, setMinute] = useState(null);
+    const [second, setSecond] = useState(null);
 
     const { onPaceChange } = props;
 
@@ -22,10 +22,21 @@ export default function Pace(props) {
 
     return (
         <div className="pace-input-container">
-            <div className="pace-tag">Pace</div>
             <div className="pace-controllers">
-            <InputNumber className="pace-input" value={minute} onValueChange={(e) => setMinute(e.value)}  mode="decimal" min={0} max={59} showButtons buttonLayout="vertical"/>
-            <InputNumber className="pace-input" value={second} onValueChange={(e) => setSecond(e.value)}  mode="decimal" min={0} max={59} showButtons buttonLayout="vertical"/>
+            <span className="p-float-label">
+            <InputNumber className="pace-inputs" value={minute} onValueChange={(e) => setMinute(e.value)} suffix=" '"  mode="decimal" min={0} max={59} showButtons buttonLayout="vertical" decrementButtonClassName="p-button-secondary"
+            incrementButtonClassName="p-button-secondary"
+            incrementButtonIcon="pi pi-plus"
+            decrementButtonIcon="pi pi-minus"/>
+            <label htmlFor="inputnumber">Minutes    </label>
+          </span>
+          <span className="p-float-label">
+            <InputNumber className="pace-inputs" value={second} onValueChange={(e) => setSecond(e.value)} suffix=' "'  mode="decimal" min={0} max={59} showButtons buttonLayout="vertical" decrementButtonClassName="p-button-secondary"
+            incrementButtonClassName="p-button-secondary"
+            incrementButtonIcon="pi pi-plus"
+            decrementButtonIcon="pi pi-minus"/>
+            <label htmlFor="inputnumber">Seconds</label>
+          </span>
             </div>
         </div>
     );

@@ -4,7 +4,7 @@ import '../styles/Distance.css';
 
 
 export default function Distance(props) {
-    const [distance, setDistance] = useState(0);
+    const [distance, setDistance] = useState(null);
 
     const { onDistanceChange } = props;
 
@@ -20,9 +20,14 @@ export default function Distance(props) {
 
     return (
         <div className="distance-input-container">
-            <div className="distance-tag">Distance</div>
             <div className="distance-controllers">
-            <InputNumber className="distance-input" value={distance} onValueChange={(e) => setDistance(e.value)}  mode="decimal" suffix=" km" min={0} max={100000000} showButtons/>
+            <span className="p-float-label p-">
+            <InputNumber className="distance-input" value={distance} buttonLayout="vertical" onValueChange={(e) => setDistance(e.value)}  mode="decimal" suffix=" km" min={0} max={100000000} showButtons decrementButtonClassName="p-button-secondary"
+            incrementButtonClassName="p-button-secondary"
+            incrementButtonIcon="pi pi-plus"
+            decrementButtonIcon="pi pi-minus"/>
+            <label htmlFor="inputnumber">Distance</label>
+          </span>
             </div>
         </div>
     );
