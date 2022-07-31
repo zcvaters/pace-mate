@@ -8,9 +8,7 @@ export default function Distance(props) {
   const { onDistanceChange } = props;
 
   useEffect(() => {
-    const newDistance = {
-      distance,
-    };
+    const newDistance = distance ?? 0;
     onDistanceChange(newDistance);
   }, [distance, onDistanceChange]);
 

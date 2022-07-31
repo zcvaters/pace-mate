@@ -11,12 +11,14 @@ export default function TimeDuration(props) {
 
   useEffect(() => {
     const newTime = {
-      hour,
-      minute,
-      second,
+      hour: hour ?? 0,
+      minute: minute ?? 0,
+      second: second ?? 0,
+      totalTimeSeconds: hour * 60 * 60 + minute * 60 + second,
+      totalTimeMinutes: hour * 60 + minute + second / 60,
     };
     onTimeChange(newTime);
-  }, [hour, minute, second, onTimeChange]);
+  }, [hour, minute, onTimeChange, second]);
 
   return (
     <div className="time-input-container">

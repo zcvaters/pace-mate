@@ -9,9 +9,13 @@ export default function Pace(props) {
   const { onPaceChange } = props;
 
   useEffect(() => {
+    const minutes = minute ?? 0;
+    const seconds = second ?? 0;
     const newPace = {
-      minute,
-      second,
+      minute: minutes ?? 0,
+      second: seconds ?? 0,
+      totalPaceSeconds: minutes * 60 + seconds,
+      totalTimeMinutes: minutes + seconds / 60,
     };
     onPaceChange(newPace);
   }, [minute, second, onPaceChange]);
