@@ -12,7 +12,7 @@ export function timeAndPaceToDistance(time, pace) {
   if (pace === 0 || time === 0) {
     return;
   }
-  const distance = time / pace;
+  const distance = (time / pace).toFixed(2);
   return distance;
 }
 

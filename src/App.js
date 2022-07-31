@@ -5,6 +5,7 @@ import "primeicons/primeicons.css";
 import TimeDuration from "./features/pace-calculator/components/TimeDuration";
 import Distance from "./features/pace-calculator/components/Distance";
 import Pace from "./features/pace-calculator/components/Pace";
+import Metrics from "./features/pace-calculator/components/Metrics";
 import { Icon } from "@iconify/react";
 import { useEffect, useState, useCallback } from "react";
 import {
@@ -59,7 +60,15 @@ function App() {
         });
       }
     }
-  });
+  }, [
+    distanceMode,
+    pace.totalPaceSeconds,
+    paceMode,
+    time.totalTimeMinutes,
+    time.totalTimeSeconds,
+    timeMode,
+    totalDistance,
+  ]);
   useEffect(() => {
     recalculateMetrics();
   }, [time, pace, totalDistance, recalculateMetrics]);
@@ -114,6 +123,7 @@ function App() {
           {(distanceMode || timeMode) && (
             <Pace pace={pace} onPaceChange={setPace} />
           )}
+          <Metrics pace={predictedPace} distance={predictedDistance} time={predictedTime} />
         </div>
       </div>
     </div>
