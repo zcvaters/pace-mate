@@ -1,25 +1,25 @@
 .time-input-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
 }
 
 .time-controllers {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding-top: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 1.25rem;
 }
 
 .time-colon {
-    display: flex;
-    justify-content: center;
-    width: 1rem;
+  display: flex;
+  justify-content: center;
+  width: 1rem;
 }
 
 .time-inputs {
-    width: 6rem;
+  width: 6rem;
 }

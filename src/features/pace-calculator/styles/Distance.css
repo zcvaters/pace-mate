@@ -1,19 +1,19 @@
 .distance-input-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
 }
 
 .distance-controllers {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1.25rem;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.25rem;
+  width: 100%;
 }
 
 .distance-input {
-    width: 20rem;
+  width: 20rem;
 }

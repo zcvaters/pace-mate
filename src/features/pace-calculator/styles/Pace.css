@@ -1,20 +1,20 @@
 .pace-input-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
 }
 
 .pace-controllers {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    align-items: center;
-    width: 100%;
-    padding: 1.25rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+  padding: 1.25rem;
 }
 
 .pace-inputs {
-    width: 10rem;
+  width: 10rem;
 }

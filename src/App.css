@@ -1,8 +1,10 @@
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   width: 100%;
 
-  --pace-form-background-color: #EEEEEE;
+  --pace-form-background-color: #eeeeee;
 }
 
 .index {
@@ -30,8 +32,6 @@ html, body, #root {
   padding: 2.5rem 6rem 2.5rem 6rem;
   background-color: var(--pace-form-background-color);
   border-radius: 5rem;
-
-    
 }
 
 .form-header {

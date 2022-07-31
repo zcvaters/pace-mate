@@ -2,42 +2,60 @@ import { InputNumber } from "primereact/inputnumber";
 import { useEffect, useState } from "react";
 import "../styles/Pace.css";
 
-
 export default function Pace(props) {
-    const [minute, setMinute] = useState(null);
-    const [second, setSecond] = useState(null);
+  const [minute, setMinute] = useState(null);
+  const [second, setSecond] = useState(null);
 
-    const { onPaceChange } = props;
+  const { onPaceChange } = props;
 
-    useEffect(
-        () => {
-            const newPace = {
-                minute,
-                second,
-            }
-            onPaceChange(newPace);
-        }
-        , [minute, second, onPaceChange]
-    )
+  useEffect(() => {
+    const newPace = {
+      minute,
+      second,
+    };
+    onPaceChange(newPace);
+  }, [minute, second, onPaceChange]);
 
-    return (
-        <div className="pace-input-container">
-            <div className="pace-controllers">
-            <span className="p-float-label">
-            <InputNumber className="pace-inputs" value={minute} onValueChange={(e) => setMinute(e.value)} suffix=" '"  mode="decimal" min={0} max={59} showButtons buttonLayout="vertical" decrementButtonClassName="p-button-secondary"
+  return (
+    <div className="pace-input-container">
+      <div className="pace-controllers">
+        <span className="p-float-label">
+          <InputNumber
+            className="pace-inputs"
+            value={minute}
+            onValueChange={(e) => setMinute(e.value)}
+            suffix=" '"
+            mode="decimal"
+            min={0}
+            max={59}
+            showButtons
+            buttonLayout="vertical"
+            decrementButtonClassName="p-button-secondary"
             incrementButtonClassName="p-button-secondary"
             incrementButtonIcon="pi pi-plus"
-            decrementButtonIcon="pi pi-minus"/>
-            <label htmlFor="inputnumber">Minutes    </label>
-          </span>
-          <span className="p-float-label">
-            <InputNumber className="pace-inputs" value={second} onValueChange={(e) => setSecond(e.value)} suffix=' "'  mode="decimal" min={0} max={59} showButtons buttonLayout="vertical" decrementButtonClassName="p-button-secondary"
+            decrementButtonIcon="pi pi-minus"
+          />
+          <label htmlFor="inputnumber">Minutes </label>
+        </span>
+        <span className="p-float-label">
+          <InputNumber
+            className="pace-inputs"
+            value={second}
+            onValueChange={(e) => setSecond(e.value)}
+            suffix=' "'
+            mode="decimal"
+            min={0}
+            max={59}
+            showButtons
+            buttonLayout="vertical"
+            decrementButtonClassName="p-button-secondary"
             incrementButtonClassName="p-button-secondary"
             incrementButtonIcon="pi pi-plus"
-            decrementButtonIcon="pi pi-minus"/>
-            <label htmlFor="inputnumber">Seconds</label>
-          </span>
-            </div>
-        </div>
-    );
+            decrementButtonIcon="pi pi-minus"
+          />
+          <label htmlFor="inputnumber">Seconds</label>
+        </span>
+      </div>
+    </div>
+  );
 }

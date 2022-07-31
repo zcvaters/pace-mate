@@ -9,21 +9,19 @@ export default function TimeDuration(props) {
 
   const { onTimeChange } = props;
 
-  useEffect(
-    () => {
-      const newTime = {
-        hour,
-        minute,
-        second,
-      }
-      onTimeChange(newTime);
-    },[hour, minute, second, onTimeChange]
-  )
+  useEffect(() => {
+    const newTime = {
+      hour,
+      minute,
+      second,
+    };
+    onTimeChange(newTime);
+  }, [hour, minute, second, onTimeChange]);
 
   return (
-      <div className="time-input-container">
-        <div className="time-controllers">
-          <span className="p-float-label">
+    <div className="time-input-container">
+      <div className="time-controllers">
+        <span className="p-float-label">
           <InputNumber
             className="time-inputs"
             onValueChange={(e) => setHour(e.value)}
@@ -39,9 +37,9 @@ export default function TimeDuration(props) {
             max={12}
           />
           <label htmlFor="inputnumber">Hours</label>
-          </span>
-          <div className="time-colon no-select">:</div>
-          <span className="p-float-label">
+        </span>
+        <div className="time-colon no-select">:</div>
+        <span className="p-float-label">
           <InputNumber
             onValueChange={(e) => setMinute(e.value)}
             mode="decimal"
@@ -57,9 +55,9 @@ export default function TimeDuration(props) {
             max={59}
           />
           <label htmlFor="inputnumber">Minutes</label>
-          </span>
-          <div className="time-colon no-select">:</div>
-          <span className="p-float-label">
+        </span>
+        <div className="time-colon no-select">:</div>
+        <span className="p-float-label">
           <InputNumber
             onValueChange={(e) => setSecond(e.value)}
             mode="decimal"
@@ -75,8 +73,8 @@ export default function TimeDuration(props) {
             max={59}
           />
           <label htmlFor="inputnumber">Seconds</label>
-          </span>
-        </div>
+        </span>
       </div>
+    </div>
   );
 }
