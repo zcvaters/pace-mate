@@ -6,6 +6,7 @@ import TimeDuration from "./features/pace-calculator/components/TimeDuration";
 import Distance from "./features/pace-calculator/components/Distance";
 import Pace from "./features/pace-calculator/components/Pace";
 import Metrics from "./features/pace-calculator/components/Metrics";
+import ModeContext from "./features/pace-calculator/components/Mode";
 import { Icon } from "@iconify/react";
 import { useEffect, useState, useCallback } from "react";
 import {
@@ -107,6 +108,9 @@ function App() {
             />
             <h1 className="form-title no-select">Pace Mate</h1>
           </div>
+          <ModeContext.Provider
+            value={mode}
+          >
           <TabMenu
             model={items}
             className={"tab-menu"}
@@ -131,6 +135,7 @@ function App() {
             time={predictedTime}
             mode={mode}
           />
+          </ModeContext.Provider>
         </div>
       </div>
     </div>
