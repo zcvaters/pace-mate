@@ -15,7 +15,7 @@ import {
   timeAndPaceToDistance,
 } from "./features/pace-calculator/converters/time";
 import { TabMenu } from "primereact/tabmenu";
-import { ToggleButton } from 'primereact/togglebutton';
+import { ToggleButton } from "primereact/togglebutton";
 
 function App() {
   const [time, setTime] = useState(0);
@@ -110,19 +110,27 @@ function App() {
             />
             <h1 className="form-title no-select">Pace Mate</h1>
           </div>
-          <ModeContext.Provider value={{mode, metric}}>
+          <ModeContext.Provider value={{ mode, metric }}>
             <TabMenu
               model={items}
               className={"tab-menu"}
               activeIndex={activeIndex}
               onTabChange={onTabChange}
             />
-            <ToggleButton onLabel="Metric" offLabel="Imperial" checked={metric} onChange={(e) => {setMetric(e.value)}} tooltip={'Toggle between - Metric (km) or Imperial (mi)'} 
-            tooltipOptions={{
-              position: 'right',
-              showDelay: 100,
-              hideDelay: 300,
-            }}/>
+            <ToggleButton
+              onLabel="Metric"
+              offLabel="Imperial"
+              checked={metric}
+              onChange={(e) => {
+                setMetric(e.value);
+              }}
+              tooltip={"Toggle between - Metric (km) or Imperial (mi)"}
+              tooltipOptions={{
+                position: "right",
+                showDelay: 100,
+                hideDelay: 300,
+              }}
+            />
             {(timeMode || paceMode) && (
               <Distance
                 distance={totalDistance}

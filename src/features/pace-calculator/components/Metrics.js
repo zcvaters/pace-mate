@@ -8,10 +8,16 @@ export default function Metrics(props) {
   return (
     <div>
       {modeContext.mode === "Pace" && (
-        <p>Pace: {pace !== 0 ? `${pace.minute} '${pace.second}` : "0' 0\""}{modeContext.metric === true ? '/km' : '/mi'}</p>
+        <p>
+          Pace: {pace !== 0 ? `${pace.minute} '${pace.second}` : "0' 0\""}
+          {modeContext.metric === true ? "/km" : "/mi"}
+        </p>
       )}
       {modeContext.mode === "Distance" && (
-        <p>Distance: {distance !== 0 ? `${distance}` : "0"} {modeContext.metric === true ? 'km' : 'mi'}</p>
+        <p>
+          Distance: {distance !== 0 ? `${distance}` : "0"}{" "}
+          {modeContext.metric === true ? "km" : "mi"}
+        </p>
       )}
       {modeContext.mode === "Time" && (
         <p>
