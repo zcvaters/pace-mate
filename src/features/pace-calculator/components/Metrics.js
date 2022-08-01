@@ -10,10 +10,10 @@ export default function Metrics(props) {
       {modeContext === "Pace" && (
         <p>Pace: {pace !== 0 ? `${pace.minute} '${pace.second}` : "0' 0\""}</p>
       )}
-      {modeContext  === "Distance" && (
+      {modeContext === "Distance" && (
         <p>Distance: {distance !== 0 ? `${distance}` : "0"}</p>
       )}
-      {modeContext  === "Time" && (
+      {modeContext === "Time" && (
         <p>
           Time:{" "}
           {time !== 0

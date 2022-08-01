@@ -108,36 +108,43 @@ function App() {
             />
             <h1 className="form-title no-select">Pace Mate</h1>
           </div>
-          <ModeContext.Provider
-            value={mode}
-          >
-          <TabMenu
-            model={items}
-            className={"tab-menu"}
-            activeIndex={activeIndex}
-            onTabChange={onTabChange}
-          />
-          {(timeMode || paceMode) && (
-            <Distance
-              distance={totalDistance}
-              onDistanceChange={setTotalDistance}
+          <ModeContext.Provider value={mode}>
+            <TabMenu
+              model={items}
+              className={"tab-menu"}
+              activeIndex={activeIndex}
+              onTabChange={onTabChange}
             />
-          )}
-          {(distanceMode || paceMode) && (
-            <TimeDuration time={time} onTimeChange={setTime} />
-          )}
-          {(distanceMode || timeMode) && (
-            <Pace pace={pace} onPaceChange={setPace} />
-          )}
-          <Metrics
-            pace={predictedPace}
-            distance={predictedDistance}
-            time={predictedTime}
-            mode={mode}
-          />
+            {(timeMode || paceMode) && (
+              <Distance
+                distance={totalDistance}
+                onDistanceChange={setTotalDistance}
+              />
+            )}
+            {(distanceMode || paceMode) && (
+              <TimeDuration time={time} onTimeChange={setTime} />
+            )}
+            {(distanceMode || timeMode) && (
+              <Pace pace={pace} onPaceChange={setPace} />
+            )}
+            <Metrics
+              pace={predictedPace}
+              distance={predictedDistance}
+              time={predictedTime}
+              mode={mode}
+            />
           </ModeContext.Provider>
         </div>
       </div>
+      <footer>
+        <p
+          style={{
+            textAlign: "center",
+          }}
+        >
+          <a href="https://github.com/zcvaters/pace-mate">Open Source</a>
+        </p>
+      </footer>
     </div>
   );
 }
