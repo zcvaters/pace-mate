@@ -26,6 +26,7 @@ function App() {
   const [paceMode, setPaceMode] = useState(true);
   const [distanceMode, setDistanceMode] = useState(false);
   const [timeMode, setTimeMode] = useState(false);
+  const [mode, setMode] = useState("Pace");
 
   const recalculateMetrics = useCallback(() => {
     if (paceMode) {
@@ -90,6 +91,7 @@ function App() {
       setDistanceMode(false);
       setTimeMode(true);
     }
+    setMode(event.value.label);
   };
   return (
     <div className="index">
@@ -123,7 +125,12 @@ function App() {
           {(distanceMode || timeMode) && (
             <Pace pace={pace} onPaceChange={setPace} />
           )}
-          <Metrics pace={predictedPace} distance={predictedDistance} time={predictedTime} />
+          <Metrics
+            pace={predictedPace}
+            distance={predictedDistance}
+            time={predictedTime}
+            mode={mode}
+          />
         </div>
       </div>
     </div>

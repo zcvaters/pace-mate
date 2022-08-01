@@ -47,12 +47,11 @@ body,
   user-select: none;
 }
 
-.p-tabmenuitem {
-  width: 100%;
+.tab-menu .p-highlight .p-menuitem-link {
+  border-color: #64748b !important;
+  color: #64748b !important;
 }
-.p-menuitem-text {
-  text-align: center !important;
-}
+
 @media (max-width: 768px) {
   .form-container {
     padding: 2.5rem 2.25rem 2.5rem 2.25rem;

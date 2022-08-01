@@ -9,13 +9,11 @@ export default function Pace(props) {
   const { onPaceChange } = props;
 
   useEffect(() => {
-    const minutes = minute ?? 0;
-    const seconds = second ?? 0;
     const newPace = {
-      minute: minutes ?? 0,
-      second: seconds ?? 0,
-      totalPaceSeconds: minutes * 60 + seconds,
-      totalTimeMinutes: minutes + seconds / 60,
+      minute: minute ?? 0,
+      second: second ?? 0,
+      totalPaceSeconds: minute * 60 + second,
+      totalTimeMinutes: minute + second / 60,
     };
     onPaceChange(newPace);
   }, [minute, second, onPaceChange]);
@@ -27,6 +25,7 @@ export default function Pace(props) {
           <InputNumber
             className="pace-inputs"
             value={minute}
+            defaultValue={0}
             onValueChange={(e) => setMinute(e.value)}
             suffix=" '"
             mode="decimal"
