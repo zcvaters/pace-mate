@@ -1,9 +1,11 @@
 import { InputNumber } from "primereact/inputnumber";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import ModeContext from "./Mode";
 import "../styles/Distance.css";
 
 export default function Distance(props) {
   const [distance, setDistance] = useState(null);
+  const modeContext = useContext(ModeContext);
 
   const { onDistanceChange } = props;
 
@@ -22,7 +24,7 @@ export default function Distance(props) {
             buttonLayout="vertical"
             onValueChange={(e) => setDistance(e.value)}
             mode="decimal"
-            suffix=" km"
+            suffix={modeContext.metric === true ? " km" : " mi"}
             min={0}
             max={100000000}
             showButtons

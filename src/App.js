@@ -15,6 +15,7 @@ import {
   timeAndPaceToDistance,
 } from "./features/pace-calculator/converters/time";
 import { TabMenu } from "primereact/tabmenu";
+import { ToggleButton } from 'primereact/togglebutton';
 
 function App() {
   const [time, setTime] = useState(0);
@@ -28,6 +29,7 @@ function App() {
   const [distanceMode, setDistanceMode] = useState(false);
   const [timeMode, setTimeMode] = useState(false);
   const [mode, setMode] = useState("Pace");
+  const [metric, setMetric] = useState(true);
 
   const recalculateMetrics = useCallback(() => {
     if (paceMode) {
@@ -108,13 +110,19 @@ function App() {
             />
             <h1 className="form-title no-select">Pace Mate</h1>
           </div>
-          <ModeContext.Provider value={mode}>
+          <ModeContext.Provider value={{mode, metric}}>
             <TabMenu
               model={items}
               className={"tab-menu"}
               activeIndex={activeIndex}
               onTabChange={onTabChange}
             />
+            <ToggleButton onLabel="Metric" offLabel="Imperial" checked={metric} onChange={(e) => {setMetric(e.value)}} tooltip={'Toggle between - Metric (km) or Imperial (mi)'} 
+            tooltipOptions={{
+              position: 'right',
+              showDelay: 100,
+              hideDelay: 300,
+            }}/>
             {(timeMode || paceMode) && (
               <Distance
                 distance={totalDistance}
@@ -131,7 +139,6 @@ function App() {
               pace={predictedPace}
               distance={predictedDistance}
               time={predictedTime}
-              mode={mode}
             />
           </ModeContext.Provider>
         </div>
@@ -142,7 +149,7 @@ function App() {
             textAlign: "center",
           }}
         >
-          <a href="https://github.com/zcvaters/pace-mate">Open Source</a>
+          <a href="https://github.com/zcvaters/pace-mate">Contribute</a>
         </p>
       </footer>
     </div>
